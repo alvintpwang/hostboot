@@ -51,4 +51,11 @@
 #define ALIGN_MEGABYTE(u)       (ALIGN_X(u,MEGABYTE))
 #define ALIGN_MEGABYTE_DOWN(u)  (ALIGN_DOWN_X(u,MEGABYTE))
 
+// Return a number rounded to the next power of two.
+#define ALIGN_POW2(u)           ((u&(u-1)) ? 1 << (64 - __builtin_clzl(u)) : u)
+#define ALIGN_POW2_DOWN(u)      (u ? 1 << (63 - __builtin_clzl(u)) : 0)
+
+// Return a number rounded down to the right most power of 2
+#define ALIGN_RIGHTMOST_POW2(u) (u ? (1 << __builtin_ctzl(u)) : 0 )
+
 #endif
