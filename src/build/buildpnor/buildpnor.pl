@@ -57,7 +57,7 @@ $XML::Simple::PREFERRED_PARSER = 'XML::Parser';
 
 my $TRAC_ERR = 0;
 # 0=errors, >0 for more traces, leaving at 1 to keep key milestone traces.
-my $g_trace = 1;
+my $g_trace = 5;
 
 my $programName = File::Basename::basename $0;
 my %pnorLayout;
@@ -599,11 +599,13 @@ sub addTOCInfo
     my @all_tocs;
     foreach my $sideId (keys %{$$i_pnorLayout{metadata}{sides}})
     {
+        trace(1, "******** side id ******** $sideId");
         push @all_tocs, $$i_pnorLayout{metadata}{sides}{$sideId}{toc}{primary};
         push @all_tocs, $$i_pnorLayout{metadata}{sides}{$sideId}{toc}{backup};
     }
     foreach my $sideId ( keys %{$$i_pnorLayout{metadata}{sides}} )
     {
+        trace(1, "******** side id ******** $sideId");
         my $physicalRegionSize = $$i_pnorLayout{metadata}{tocSize};
         my $backup_part = "BACKUP_PART";
         my $other_side  = "OTHER_SIDE";

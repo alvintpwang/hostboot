@@ -43,6 +43,8 @@
 #include <errl/errlmanager.H>
 #include <config.h>
 #include <algorithm>
+
+#define CONFIG_BMC_IPMI
 namespace TARGETING
 {
 

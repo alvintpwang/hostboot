@@ -278,7 +278,7 @@ uint32_t getSensorNumber( const Target* i_pTarget,
  */
 TARGETING::Target * getSensorTarget( uint32_t i_sensorNumber );
 
-#ifdef CONFIG_BMC_IPMI
+//#ifdef CONFIG_BMC_IPMI
 /**
  *  @brief Returns the target handle referencing a target whose sensor
  *          number matches the caller supplied value
@@ -295,7 +295,7 @@ TARGETING::Target * getSensorTarget( uint32_t i_sensorNumber );
  *  @retval NULL No target found
  */
 Target * getTargetFromIPMISensor( uint32_t i_sensorNumber );
-#endif
+//#endif
 
 } // End namespace TARGETING::UTIL
 
